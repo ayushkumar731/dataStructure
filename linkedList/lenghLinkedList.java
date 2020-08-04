@@ -30,16 +30,11 @@ Sample Output 2 :
 0
 */
 
+
 package linkedList;
 
 import java.util.Scanner;
-class Node<T>{
-    T data;
-    Node<T> next;
-    public Node(T data){
-        this.data=data;
-    }
-}
+
 public class lenghLinkedList {
 
     public static int length(Node<Integer> head){

@@ -33,13 +33,7 @@ Sample Output 1 :
 
 package linkedList;
 import java.util.Scanner;
-class Node<T>{
-    T data;
-    Node<T> next;
-    public Node(T data){
-        this.data=data;
-    }
-}
+
 public class printithNode {
     public static void printIthNode(Node<Integer> head,int i){
         int count=0;
