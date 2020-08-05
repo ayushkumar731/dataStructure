@@ -24,13 +24,11 @@ class queueLL<T>{
     private Node<T> front;
     private Node<T> rear;
     private int size;
-    private Node<T> head;
 
     public queueLL(){
         front=null;
         rear=null;
         size=0;
-        head=null;
     }
     public int size(){
         return size;
