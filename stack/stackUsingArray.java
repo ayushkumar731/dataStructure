@@ -1,14 +1,4 @@
 package stack;
-
-class stackEmptyException extends Exception {
-
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
-
-}
-
 class stackArray {
     private int[] data;
     private int topIndex;
