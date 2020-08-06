@@ -1,3 +1,19 @@
+/*
+Nodes Greater Than X
+
+Given a Binary Tree and an integer x, find and return the count of nodes which are having data greater than x.
+Input format :
+Line 1 : Elements in level order form (separated by space)
+(If any node does not have left or right child, take -1 in its place)
+Line 2 : Integer x
+Output Format :
+count
+Sample Input :
+8 3 10 1 6 -1 14 -1 -1 4 7 13 -1 -1 -1 -1 -1 -1 -1
+8
+Sample Output :
+3    
+ */
 package BinaryTree;
 import java.util.Scanner;
 public class nodesGreaterThanX {
