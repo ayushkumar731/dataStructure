@@ -15,23 +15,33 @@ Sample Output :
  */
 package BinaryTree;
 import java.util.Scanner;
-public class diameterOfBinaryTree {
-    private static int height(BinaryTreeNode<Integer> root){
-        if(root==null){
-            return 0;
-        }
-        int leftHeight=height(root.left);
-        int rightHeight=height(root.right);
-        return 1+Math.max(leftHeight, rightHeight);
+class dia{
+    int height;
+    int diameter;
+    public dia(int height,int diameter){
+        this.height=height;
+        this.diameter=diameter;
     }
-    private static int diameter(BinaryTreeNode<Integer> root) {
+}
+public class diameterOfBinaryTree {
+    
+    private static dia diameter(BinaryTreeNode<Integer> root) {
         if(root==null){
-            return 0;
+            int height=0;
+            int diameter=0;
+            dia ans=new dia(height,diameter);
+            return ans;
         }
-        int dia1=1+ height(root.left)+height(root.right);
-        int dia2= diameter(root.left);
-        int dia3= diameter(root.right);
-        return Math.max(dia1, Math.max(dia2, dia3));
+        dia leftOutput=diameter(root.left);
+        dia rightOutput=diameter(root.right);
+        int height=Math.max(leftOutput.height,rightOutput.height)+1;
+        int dia1=leftOutput.height+rightOutput.height+1;
+        int dia2=leftOutput.diameter;
+        int dia3=rightOutput.diameter;
+        int diameter=Math.max(dia1, Math.max(dia2, dia3));
+        dia ans=new dia(height,diameter);
+        return ans;
+
     }
     private static BinaryTreeNode<Integer> takeInput(boolean isRoot,int data,boolean isLeft) {
         if(isRoot){
@@ -57,6 +67,6 @@ public class diameterOfBinaryTree {
      }
      public static void main(String[] args) {
          BinaryTreeNode<Integer> root=takeInput(true,0,true);
-        System.out.println(diameter(root));
+        System.out.println(diameter(root).diameter);
      }
 }
